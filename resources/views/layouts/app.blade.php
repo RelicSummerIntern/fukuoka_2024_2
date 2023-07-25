@@ -12,7 +12,8 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js'])
+
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -25,6 +26,12 @@
                         {{ $header }}
                     </div>
                 </header>
+            @endif
+
+            @if (session('success'))
+            <div class="bg-green-300 border p-4 font-semibold text-center">
+                {{ session('success') }}
+            </div>
             @endif
 
             <!-- Page Content -->

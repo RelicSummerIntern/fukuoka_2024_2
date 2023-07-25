@@ -46,6 +46,8 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
+        session()->flash('success', '会員登録に成功しました。');
+
         return redirect(RouteServiceProvider::HOME);
     }
 }
