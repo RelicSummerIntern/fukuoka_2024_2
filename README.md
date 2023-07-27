@@ -1,20 +1,27 @@
-PIサマーインターンのサンプルアプリ
+# PIサマーインターンのサンプルアプリです
 
-## セットアップ
+## セットアップ手順（上から順番に実行）
 
 ```sh
-git clone git@github.com:RelicInc/training2023_ecshop.git ecshop
-cd ecshop
-cp .env.example .env
+# 作業ディレクトリに移動
+
+# Macはこっち
+cp .env.example-mac .env
+
+# Windowsはこっち
+cp .env.example-windows .env
+
+#　以下はまとめてコピペして実行してください
 docker run --rm \
     -u "$(id -u):$(id -g)" \
     -v "$(pwd):/var/www/html" \
     -w /var/www/html \
     laravelsail/php82-composer:latest \
     composer install --ignore-platform-reqs
+
 docker-compose up -d
 docker-compose exec laravel.test php artisan key:generate
-docker-compose exec laravel.test php artisan migrate:fresh --seed
+docker-compose exec laravel.test php artisan migrate
 docker-compose exec laravel.test npm install
 docker-compose exec laravel.test npm run dev
 ```
