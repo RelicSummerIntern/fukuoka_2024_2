@@ -36,6 +36,7 @@ docker-compose exec laravel.test npm run dev
 ## URL
 
 サンプルアプリ：http://localhost/
+
 phpMyAdmin: http://localhost:8080/
 
 ## コマンドリファレンス
