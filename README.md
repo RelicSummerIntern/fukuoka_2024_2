@@ -3,7 +3,8 @@
 ## セットアップ手順（上から順番に実行）
 
 ```sh
-# 作業ディレクトリに移動
+git clone git@github〜　（サンプルリポジトリをforkして、自分のリポジトリからクローンしてください）
+cd example-app (リポジトリ名を変更していたら各々変更してください)
 
 # Macはこっち
 cp .env.example-mac .env
