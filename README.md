@@ -1,9 +1,12 @@
-# PIサマーインターンのサンプルアプリです
+# PIサマーインターンのサンプルアプリ
+
+サンプルアプリを動かすときはDocker Desktopを立ち上げた状態にしてください。
 
 ## セットアップ手順（上から順番に実行）
 
 ```sh
-# 作業ディレクトリに移動
+# 作業ディレクトリに移動(リポジトリ名を変えた場合は適宜修正してください。)
+cd example-app 
 
 # Macはこっち
 cp .env.example-mac .env
@@ -26,16 +29,22 @@ docker-compose exec laravel.test npm install
 docker-compose exec laravel.test npm run dev
 ```
 
-## 起動
+## Docker起動
 
 ```sh
 docker-compose up -d
 docker-compose exec laravel.test npm run dev
 ```
 
-## URL
+## Docker停止
 
+```sh
+docker-compose stop
+```
+
+## URL
 サンプルアプリ：http://localhost/
+
 phpMyAdmin: http://localhost:8080/
 
 ## コマンドリファレンス
