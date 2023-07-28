@@ -4,13 +4,9 @@
 
 ```sh
 git clone git@github〜　（サンプルリポジトリをforkして、自分のリポジトリからクローンしてください）
-cd example-app (リポジトリ名を変更していたら各々変更してください)
+cd example-app # リポジトリ名を変更していたら変更してください
 
-# Macはこっち
 cp .env.example-mac .env
-
-# Windowsはこっち
-cp .env.example-windows .env
 
 #　以下はまとめてコピペして実行してください
 docker run --rm \
@@ -18,11 +14,11 @@ docker run --rm \
     -v "$(pwd):/var/www/html" \
     -w /var/www/html \
     laravelsail/php82-composer:latest \
-    composer install --ignore-platform-reqs
+    composer install
 
 docker-compose up -d
 docker-compose exec laravel.test php artisan key:generate
-docker-compose exec laravel.test php artisan migrate
+docker-compose exec laravel.test php artisan migrate:fresh --seed
 docker-compose exec laravel.test npm install
 docker-compose exec laravel.test npm run dev
 ```
