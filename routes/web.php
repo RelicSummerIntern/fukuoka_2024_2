@@ -39,8 +39,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
 });
 
-
-
 require __DIR__.'/auth.php';
 
-Auth::routes();
