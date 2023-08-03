@@ -17,7 +17,7 @@ docker run --rm \
 
 docker-compose up -d
 docker-compose exec laravel.test php artisan key:generate
-docker-compose exec laravel.test php artisan migrate:fresh --seed
+docker-compose exec laravel.test php artisan migrate:fresh
 docker-compose exec laravel.test npm install
 docker-compose exec laravel.test npm run dev
 ```
