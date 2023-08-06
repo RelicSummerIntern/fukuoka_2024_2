@@ -22,14 +22,14 @@ docker-compose exec laravel.test npm install
 docker-compose exec laravel.test npm run dev
 ```
 
-## Docker起動
+## 起動
 
 ```sh
 docker-compose up -d
 docker-compose exec laravel.test npm run dev
 ```
 
-## Docker停止
+## 停止
 
 ```sh
 docker-compose stop
