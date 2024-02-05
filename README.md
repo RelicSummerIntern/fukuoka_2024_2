@@ -22,14 +22,16 @@ docker-compose exec laravel.test npm install
 docker-compose exec laravel.test npm run dev
 ```
 
-## 起動
+ここまで実行すると http://localhost/ でサンプルアプリにアクセスできます
+
+## 2回目以降の起動方法
 
 ```sh
 docker-compose up -d
 docker-compose exec laravel.test npm run dev
 ```
 
-## 停止
+## 停止する方法
 
 ```sh
 docker-compose stop
