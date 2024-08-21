@@ -31,6 +31,10 @@ Route::get('/AMprofile_edit', function () {
     return view('AMprofile_edit');
 });
 
+Route::get('/AMCPprofile', function () {
+    return view('AMCPprofile');
+});
+
 Route::get('/home', function () {
     return view('home');
 })->name('home');
