@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\AMProfileController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +21,20 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/profile', function () {
+    return view('profile');
+});
+Route::get('/AMprofile', function () {
+    return view('AMprofile');
+});
+Route::get('/AMprofile_edit', function () {
+    return view('AMprofile_edit');
+});
+
+Route::get('/AMCPprofile', function () {
+    return view('AMCPprofile');
+});
+
 Route::get('/home', function () {
     return view('home');
 })->name('home');
@@ -28,6 +44,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    
+    
 
     Route::get('/post/index', [PostController::class, 'index'])->name('post.index');
     Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
@@ -41,3 +59,5 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+Route::get('/AMprofile__edit', [AMProfileController::class, 'edit'])->name('AMprofile.edit');
+Route::get('/AMprofile', [AMProfileController::class, 'back'])->name('AMprofile.back');
