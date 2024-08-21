@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; // Authファサードの使用を忘れずに
-
+use Illuminate\View\View;
 
 class AmhomeController extends Controller{
     public function index() {
@@ -22,7 +22,7 @@ class AmhomeController extends Controller{
         return redirect('/');
     }
     
-
+  
     /* ホームページからログイン画面に遷移するためのコード */
     public function rogin(Request $request): View{
         return view('AMhome_rogin');
@@ -38,6 +38,7 @@ class AmhomeController extends Controller{
     }
     /* 新規登録画面からホームページに遷移するためのコード */
     public function aregis(Request $request): View{
-        return view('AMhome')
+        return view('AMhome');
     }
+    
 }

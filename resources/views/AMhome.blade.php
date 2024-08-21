@@ -15,16 +15,19 @@
 <body>
 
     <header>
+        
         <div class="site-name">サイト名</div>
-        <!--<div class="edit-mode">編集モード</div>-->
+        
+       
     </header>
 
     <section class="main-content">
-        <div class=catchcpy>キャッチコピー
-        </div>
-        <div class="regis">
+        
+        
+        <div class="contenthome">
+          <div class="regis">
             <!--<button class="btn">background image</button>-->
-            <a href="#" class="button1">新規登録</a>
+            <a href="{{route('register')}}" class="button1">新規登録</a>
             <a href="{{route('post.index')}}" class="button1">
                 @if(Auth::check())
                     ログアウト
@@ -32,8 +35,8 @@
                     ログイン
                 @endif
             </a>
-            <button class="btn globe"><img src="{{ asset('images/globe-icon.png') }}" alt="Globe"></button>
-        </div>
+            <a href="#" class="transformf"></a>
+          </div>
     
       
         <div>
@@ -49,6 +52,7 @@
             <div class="picture2">picture2</div>
             <div class="picture3">picture3</div>
         </div> 
+
         <div class="searchdisplay">
           <p class="icon1">
              <i class="fa-solid fa-plus fa-4x icon1"></i><!-- プラスボタン -->
@@ -57,13 +61,15 @@
              <i class="fa-solid fa-magnifying-glass fa-4x icon2"></i><!-- 虫眼鏡ボタン -->
           </p>
         </div>
-        
+        <div class=catchcpy>キャッチコピー</div>
     </section>
 
     @yield('content')
+  </div>
     <footer>
-      
+    @isset($today)<!-- 一つのサイト上で関数を表示したい時に使うためのコード -->
        <p class="stime">Ⓒ：{{$today}}</p>
+    @endisset<!-- 一つのサイト上で関数を表示したい時に使うためのコード -->
     </footer>
 </body>
 </html>
