@@ -41,4 +41,9 @@ class AmhomeController extends Controller{
         return view('AMhome');
     }
     
+
+    /* 雄貴が作ったものを遷移するためのコード */
+    public function ad(Request $request): View{
+        return view('AMhome');
+    }
 }
