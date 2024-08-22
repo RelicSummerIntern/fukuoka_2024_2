@@ -23,6 +23,19 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
+Route::get('/searchPage', function () {
+    return view('searchPage');
+})->name('searchPage');
+
+Route::get('/bulletinBoard', function () {
+    return view('bulletinBoard');
+})->name('bulletinBoard');
+
+Route::get('/thread', function () {
+    return view('thread');
+})->name('thread');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

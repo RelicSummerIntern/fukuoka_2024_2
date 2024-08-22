@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+body {
+    background: #aa4b6b;
+    background: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);
+    background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);
+}
+
+.header {
+    height: 80px;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ddd
+}
+
+.nav-box {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    height: 40px;
+    padding-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+    color: #333;
+}
+
+.nav-box .nav {
+    display: flex;
+    font-size: 16px;
+    color: #555;
+}
+
+.nav-box .nav li {
+    padding-left: 80px;
+}
+
+/* a:hover 鼠标移动到目标上会出现下划线 */
+.nav-box .nav a.on,
+.nav-box .nav a:hover {
+    color: #000000;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #333;
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.block {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    margin-top: 100px;
+    margin-left: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #4caf50; /* 绿色背景 */
+    color: white;
+    border: 3px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.block:hover {
+    transform: scale(1.05);
+    background-color: #66bb6a;
+}
+
+.btn {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+
+.but {
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 150px;
+    height: 34px;
+    line-height: 34px; /* 设置为与按钮高度相同 */
+    border: none;
+    color: #fff;
+    text-align: center;
+    background: lightblue;
+    cursor: pointer;
+    font-size: 20px;
+    display: inline-block; /* 让按钮宽度和高度生效 */
+    vertical-align: middle; /* 使按钮在垂直方向对齐 */
+    border-radius: 4px; /* 可选：添加圆角效果 */
+}
+
+/* footer */
+.footer-images {
+    display: flex;
+    margin-top: 150px;
+    justify-content: center;  /* 图片居中 */
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+/* 图片样式 */
+.footer-images img {
+    width: 50px;  /* 控制图片宽度 */
+    height: 50px; /* 控制图片高度 */
+    margin: 0 200px;  /* 图片间距 */
+    cursor: pointer;  /* 鼠标悬停时显示为手型 */
+}
+
+/* 图片链接的样式 */
+.footer-images a {
+    text-decoration: none;
+}
