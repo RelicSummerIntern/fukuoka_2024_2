@@ -17,11 +17,21 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    // Userモデルの例
     protected $fillable = [
         'name',
         'email',
         'password',
+        'self_intro',
+        'want_work',
+        'now_work',
+        'want_money',
+        'want_place',
+        'now_place',
+        'use_lang',
     ];
+
+    
 
     /**
      * The attributes that should be hidden for serialization.

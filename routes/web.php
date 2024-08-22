@@ -31,7 +31,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
     Route::get('/post/index', [PostController::class, 'index'])->name('post.index');
     Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
     Route::post('/post/store', [PostController::class, 'store'])->name('post.store');
@@ -41,7 +40,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
 });
-
+Route::patch('/AMprofile', [AMProfileController::class, 'update'])->name('AMprofile.update');
 require __DIR__.'/auth.php';
 
 /* チーム開発用webサイト */
@@ -54,9 +53,7 @@ require __DIR__.'/auth.php';
  Route::get('/AMhome',[AmhomeController::class, 'aregis'])->name('AMhome.aregis');/* 新規登録画面からホーム画面に遷移するためのコード */
 
 /* 雄貴が作ったコード */
-Route::get('/AMprofile', function () {
-    return view('AMprofile');
-});
+
 Route::get('/AMprofile_edit', function () {
     return view('AMprofile_edit');
 });

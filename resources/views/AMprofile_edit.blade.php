@@ -53,18 +53,7 @@
         .profile-info p strong {
             color: #333333;
         }
-        .AMhomepage-button {
-            background-color: #333333;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            padding: 15px 30px;  /* ボタンを大きくする */
-            cursor: pointer;
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 1.1em; /* ボタンのフォントサイズを大きくする */
-        }
+        
         .AMhomepage-button a {
             color: #ffffff;
             text-decoration: none;
@@ -89,68 +78,73 @@
         
         /* プロフィールからホーム画面に遷移するためのコード */
         .AMhomep{
-            
             position: absolute;
             top: 5px;
             right: 6px
-            
-
         }
-        
-
-
         
     </style>
 </head>
+
 <body>
     <!-- <button class="AMhomepage-button">
         <a href="{{ route('post.index') }}">HOME</a>
         
     </button> -->
+    
     <div class="profile-card">
-      <a class="AMhomepage-botton">
-        <a href="{{route('AMhome.ad')}}"  class="AMhomep">    
-            <img src="../img/AMprofile.jpeg" width="130" height="101" position: absolute top: 5px
-            right: 6px alt="Profile Image">
+      <a class="AMhomepage-button">
+        <a href="{{ route('AMhome.ad') }}"  class="AMhomep">    
+            <img src="../img/AMprofile.jpeg" width="130" height="101" alt="Profile Image">
         </a> <!-- web.phpの行71を参照 -->
       </a>
       
+      <form method="post" action="{{ route('AMprofile.update') }}" class="mt-6 space-y-6">
+        @csrf
+        @method('patch')
+        
         <div class="profile-image">
             <img src="../img/lena.png" alt="Profile Image">
         </div>
         <div class="profile-info">
-        <h2>Hukuoka Tarou</h2>
-            <p>s23a3047@co.jp</p>
+            <p><strong>名前：</strong><input type="text" id="name" name="name" class="mt-1 block w-full" value="{{ old('name', $user->name) }}" required autofocus autocomplete="name"></p>
+            <p><strong>メールアドレス：</strong><input type="email" id="email" name="email" class="mt-1 block w-full" value="{{ old('email', $user->email) }}" required autocomplete="username"></p>
+
+           <br>
             <p><strong>所在地：</strong>
-                <input type="text" id="nowplace" name="name" required minlength="4" maxlength="8" size="10" value="日本"/>
+                <input type="text" id="now_place" name="now_place" rows="3" class="mt-1 block w-full"value="{{ old('now_place', $user->now_place)}}"/>
             </p>
-            <p>I want to be a soccerplayer</p>
-            <br>
+            <p><strong>自己PR：</strong>
+                <input type="text" id="self_intro" name="self_intro" rows="3" class="mt-1 block w-full"value="{{ old('self_intro', $user->self_intro)}}"/>
+            </p>
             <p><strong>希望業種：</strong>
-                <input type="text" id="wantwork" name="name" required minlength="4" maxlength="8" size="10" value="エンジニア"/>
+                <input type="text" id="want_work" name="want_work" required minlength="1" maxlength="8" size="10" value="{{ old('want_work', $user->want_work) }}"/>
             </p>
-            <p><strong>現在の職種：</strong>
-                <input type="text" id="nowwork" name="name" required minlength="4" maxlength="8" size="10" value="デザイナー"/>
+            <p><strong>現在の業種：</strong>
+                <input type="text" id="now_work" name="now_work" required minlength="1" maxlength="8" size="10" value="{{ old('now_work', $user->now_work) }}"/>
             </p>
             
             <p><strong>希望収入：</strong>
-                <input type="text" id="wantmoney" name="name" required minlength="4" maxlength="8" size="10" value="400"/>
-                $    
+                <input type="text" id="want_money" name="want_money" required minlength="1" maxlength="8" size="10" value="{{ old('want_money', $user->want_money) }}"/>
+                $
             </p>
-            
             <p><strong>希望勤務地：</strong>
-                <input type="text" id="wantplace" name="name" required minlength="4" maxlength="8" size="10" value="イギリス"/>
+                <input type="text" id="want_place" name="want_place" required minlength="1" maxlength="8" size="10" value="{{ old('want_place', $user->want_place) }}"/>
             </p>
             <p><strong>使用言語：</strong>
-                <input type="text" id="uselang" name="name" required minlength="4" maxlength="8" size="10" value="日本語"/>
+                <input type="text" id="use_lang" name="use_lang" required minlength="1" maxlength="8" size="10" value="{{ old('use_lang', $user->use_lang) }}"/>
             </p>
         </div>
-        <form action="{{ route('AMprofile.back') }}" method="get">
-            <button type="submit" class="edit-button">
-               元に戻る
-            </button>
-        </form>
-    </div>
 
+        <div class="flex items-center gap-4">
+            <button type="submit" class="edit-button">保存する</button>
+            @if (session('status') === 'profile-updated')
+                <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)" class="text-sm text-gray-600">
+                    {{ __('Saved.') }}
+                </p>
+            @endif
+        </div>
+      </form>
+    </div>
 </body>
 </html>
