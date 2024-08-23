@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BulletinBoardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,24 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
+// コウカウ 作ったもの
+Route::get('/searchPage', function () {
+    return view('searchPage');
+})->name('searchPage');
+
+Route::get('/bulletinBoard', function () {
+    return view('bulletinBoard');
+})->name('bulletinBoard');
+
+Route::get('/bulletinBoard', [BulletinBoardController::class, 'index'])->name('bulletinBoard');
+Route::post('/bulletinBoard', [BulletinBoardController::class, 'store']);
+
+
+Route::get('/thread', function () {
+    return view('thread');
+})->name('thread');
+// コウカウ　作ったもの
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -40,4 +59,3 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
-
