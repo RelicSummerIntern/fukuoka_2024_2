@@ -60,4 +60,4 @@ docker compose exec laravel.test php artisan clear-compiled
 docker compose exec laravel.test /bin/bash
 ```
 # dockerのversionが古い時のコマンド
-docker-compose up -d
+docker-compose up -ds
