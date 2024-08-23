@@ -3,9 +3,13 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\AmhomeController;/* リンク先：localhost/AMhome上に開くために使うコード */
 
 use App\Http\Controllers\AMProfileController; /* 雄貴が作ったコード */
+
+use App\Http\Controllers\BulletinBoardController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +30,10 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
+
 /* サンプル機能の一覧 */
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -44,6 +51,7 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
 
 /* チーム開発用webサイト */
  /* ホームページ用 */
@@ -91,4 +99,19 @@ Route::get('/AMprofile', [AMProfileController::class, 'back'])->name('AMprofile.
 Route::get('/ad',[AmhomeController::class, 'ad'])->name('AMhome.ad');/* プロフィール編集画面からホーム画面に遷移するためのコード */
 Route::get('/ad',[AmhomeController::class, 'ad'])->name('AMhome.ad');/* プロフィール完成画面からホーム画面に遷移するためのコード */
 
+
+
+// コウカウ 作ったもの
+Route::get('/searchPage', function () {
+    return view('searchPage');
+})->name('searchPage');
+
+Route::get('/bulletinBoard', function () {
+    return view('bulletinBoard');
+})->name('bulletinBoard');
+
+Route::get('/thread', function () {
+    return view('thread');
+})->name('thread');
+// コウカウ 作ったもの
 
