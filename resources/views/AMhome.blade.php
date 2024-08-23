@@ -53,18 +53,21 @@
            </form>
         </div>
         <div class="Ahpictures">
-            <div class="picture1">picture1</div>
-            <div class="picture2">picture2</div>
-            <div class="picture3">picture3</div>
+          <a href="AMCPprofile" alt="企業情報1">
+            <div class="picture1">
+            </div>
+          </a>
+            <div class="picture2"></div>
+            <div class="picture3"></div>
         </div> 
 
         <div class="searchdisplay">
-         <a href="">
+         <a href="thread">
           <p class="icon1">
              <i class="fa-solid fa-plus fa-4x icon1"></i><!-- プラスボタン -->
           </p>
          </a>
-         <a href="">
+         <a href="searchPage">
           <p class="icon2">
              <i class="fa-solid fa-magnifying-glass fa-4x icon2"></i><!-- 虫眼鏡ボタン -->
           </p>
@@ -75,7 +78,7 @@
 
     @yield('content')
   </div>
-    <footer>
+    <footer><!-- 使う予定か迷っている -->
     @isset($today)<!-- 一つのサイト上で関数を表示したい時に使うためのコード -->
        <p class="stime">Ⓒ：{{$today}}</p>
     @endisset<!-- 一つのサイト上で関数を表示したい時に使うためのコード -->

@@ -128,7 +128,11 @@
   
   /* 写真1 */
   .picture1{
-      background-color: #7c7a7a;
+      /*background-color: #7c7a7a;*/
+      background-image: url(../img/copr0.webp);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center; /* 画像を常に上下左右の中央に配置させるために使うコード */
       height: 350px;
       display: flex;
       margin-top: 30px; /* 境界線の上側を広げる */
@@ -141,8 +145,12 @@
   
   /* 写真2 */
   .picture2{
-      background-color: #7c7a7a;
+      /*background-color: #7c7a7a;*/
       height: 350px;
+      background-image: url(../img/copr1.jpeg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
       display: flex;
       margin-top: 30px; 
       margin-left: 230px; 
@@ -154,8 +162,12 @@
 
   /* 写真3 */
   .picture3{
-    background-color: #7c7a7a;
+    /*background-color: #7c7a7a;*/
     height: 350px;
+    background-image: url(../img/copr2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
     display: flex;
     margin-top: 30px; 
     margin-left: 230px; 
