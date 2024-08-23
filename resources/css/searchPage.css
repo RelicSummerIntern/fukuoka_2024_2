@@ -1,0 +1,422 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+body {
+
+    background: #aa4b6b;
+    background: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);
+    background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);
+}
+
+.header {
+    height: 80px;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ddd
+}
+
+.nav-box {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    height: 40px;
+    padding-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+    color: #333;
+}
+
+.nav-box .nav {
+    display: flex;
+    font-size: 16px;
+    color: #555;
+}
+
+.nav-box .nav li {
+    padding-left: 80px;
+}
+
+/* a:hover 鼠标移动到目标上会出现下划线 */
+.nav-box .nav a.on,
+.nav-box .nav a:hover {
+    color: #000000;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #333;
+}
+
+
+/* .banner {
+    width: 1200px;
+    margin: 0 auto;
+    background: url(../imgs/banner.png) no-repeat center center;
+    height: 200px;
+    text-align: center;
+    line-height: 312px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+} */
+
+.introduce {
+    width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.introduce-tit {
+    line-height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.introduce-main {
+    display: flex;
+}
+
+.introduce .l {
+    margin-right: 50px;
+}
+
+.introduce .l img {
+    /* border-radius: 50%;  让头像变成圆形 */
+    border-radius: 50%;
+}
+
+.introduce .r {
+    line-height: 50px;
+    font-size: 18px;
+    color: #555;
+}
+
+.edu-box,
+.work {
+    display: flex;
+    width: 100%;
+}
+
+.work {
+    margin-bottom: 30px;
+}
+
+.r-box {
+    margin-left: 40px;
+    line-height: 26px;
+
+}
+
+.r-box .tit {
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+
+.r-box .small {
+    font-size: 16px;
+    color: #666;
+}
+
+.r-box .time {
+    padding: 10px 20px;
+    height: 20px;
+    line-height: 24px;
+    background: #333;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 20px;
+    display: flex;
+    padding-right: 20px;
+}
+
+.skill {
+    width: 50%;
+    margin-bottom: 40px;
+}
+
+.skill .tit {
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 20px;
+    font-weight: 600px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+}
+
+.progress {
+    width: 100%;
+    height: 7px;
+    border-radius: 7px;
+    background: #ddd;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-in {
+    position: absolute;
+    height: 7px;
+    left: 0;
+    top: 0;
+    background: lightblue;
+}
+
+.myform {
+    margin-top: 50px;
+}
+
+.inp-box {
+    width: 100%;
+    display: flex;
+    min-height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.inp {
+    flex: 1;
+    height: 40px;
+    text-indent: 10px;
+    border: 1px solid #ddd;
+    font-size: 20px;
+    margin: 0 20px;
+}
+
+.msg {
+    flex: 1;
+    margin: 0 20px;
+    border: 1px solid #ddd;
+    text-indent: 10px;
+    line-height: 24px;
+    padding: 20px 0;
+    font-size: 20px;
+    min-height: 100px;
+}
+
+.but {
+    margin: 20px;
+    width: 150px;
+    height: 34px;
+    line-height: 42px;
+    border: none;
+    color: #fff;
+    text-align: center;
+    background: lightblue;
+    /* 按倒按钮上指针变成小手 cursor: pointer;*/
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.but:hover {
+    /* 修改按钮透明度 */
+    opacity: 0.8;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 300px); /* 三列，每列300px */
+    grid-template-rows: repeat(3, 200px); /* 三行，每行200px */
+    gap: 10px; /* 每个单元格之间的间距 */
+    justify-content: center; /* 居中对齐网格容器 */
+    align-content: center; /* 垂直居中网格容器 */
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.grid-item img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover; /* 保持图片的纵横比，同时填充整个区域 */
+}
+
+.grid-item p {
+    margin: 10px 0 0;
+    text-align: center;
+    font-size: 1em;
+}
+
+.description {
+    margin-top: 100px;
+}
+
+
+
+/* 
+search box　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+search box　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+search box　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+search box　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+*/
+
+.search-box {
+    position: relative;
+    margin-top: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FD2C6B;
+    height: 40px;
+    width: 600px;
+    border-radius: 30px;
+    /*圆角边框*/
+    padding: 10px;
+}
+
+.search-box:hover>.search-text {
+    width: 400px;
+}
+
+.search-box:hover>.search-btn {
+    background: white;
+    color: #26087b;
+    cursor: pointer;
+}
+
+.search-btn {
+
+    /* color: white; */
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* background: #FD2C6B; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.search-text {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 20px;
+    font-family: "Microsoft YaHei UI Light";
+    transition: 0.5s;
+    line-height: 40px;
+    width: 0px;
+}
+
+.container {
+    width:90%;
+    margin:45px auto;
+}
+.m-list4 {
+    padding:1px 0 0 0;zoom:1;
+}
+.m-list4 ul{
+    margin:-11px 0 0 -10px;
+}
+.m-list4 li{
+    margin:10px 0 0 10px;
+    display:inline;width:150px;
+    float:left;
+}
+.m-list4 h3,.m-list4 p {
+    height:18px;
+    line-height:18px;
+    overflow:hidden;
+    width:100%;
+}
+.m-list4 h3{
+    margin:5px 0 5px 0;
+}
+
+/*无边框*/
+.u-img {
+    display:block;
+    width:150px;
+    height:120px;
+    position:relative;
+}
+.u-img img{
+    display:block;
+    width:100%;
+    height:100%;
+}
+/*有边框*/
+.u-img2 {
+    display: block; /* 确保每个声明后有分号 */
+    width: 144px;
+    height: 114px;
+    padding: 2px;
+    border: 1px solid #dcdcdc;
+    position: relative;
+}
+
+.u-img2 img {
+    display:block;
+    width:100%;
+    height:100%;
+}
+
+
+/* button */
+.button-container {
+    display: flex;
+    justify-content: center;  /* 水平居中 */
+    align-items: center;  /* 垂直居中 */
+    gap: 50px;  /* 按钮之间的间距 */
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+
+.footer-images {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;  /* 图片居中 */
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+/* 图片样式 */
+.footer-images img {
+    width: 50px;  /* 控制图片宽度 */
+    height: 50px; /* 控制图片高度 */
+    margin: 0 200px;  /* 图片间距 */
+    cursor: pointer;  /* 鼠标悬停时显示为手型 */
+}
+
+/* 图片链接的样式 */
+.footer-images a {
+    text-decoration: none;
+}

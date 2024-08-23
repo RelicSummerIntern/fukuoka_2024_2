@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+body {
+    background: #aa4b6b;
+    background: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);
+    background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);
+}
+
+.header {
+    height: 80px;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ddd
+}
+
+.nav-box {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    height: 40px;
+    padding-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+    color: #333;
+}
+
+.nav-box .nav {
+    display: flex;
+    font-size: 16px;
+    color: #555;
+}
+
+.nav-box .nav li {
+    padding-left: 80px;
+}
+
+/* a:hover 鼠标移动到目标上会出现下划线 */
+.nav-box .nav a.on,
+.nav-box .nav a:hover {
+    color: #000000;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #333;
+}
+
+
+/* 
+掲示板
+1.xxxxxxxxx
+2.xxxxxxxxx
+3.xxxxxxxx */
+
+
+
+
+
+/* 書き込み　ボックス */
+.bulletinBoard {
+    width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.bulletinBoard-tit {
+    line-height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.bulletinBoard-main {
+    display: flex;
+}
+
+.bulletinBoard .l {
+    margin-right: 50px;
+}
+
+.bulletinBoard .l img {
+    /* border-radius: 50%;  让头像变成圆形 */
+    border-radius: 50%;
+}
+.bulletinBoard .r {
+    margin-top: 40px;
+    line-height: 50px;
+    font-size: 18px;
+    color: #333333;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.list-container {
+    flex: 1;
+    height: 120px; /* 限制列表的高度 */
+    overflow-y: scroll; /* 滚动条 */
+}
+
+.list {
+    list-style-type: none;
+}
+
+.list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.slider {
+    width: 30px;
+}
+
+input[type="range"] {
+    width: 100%;
+    writing-mode: bt-lr; /* 使滑块竖直 */
+    transform: rotate(270deg);
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #ddd;
+    height: 150px;
+}
+
+
+/* 隐藏滚动条样式（仅在必要时显示滚动条） */
+.list-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.list-container::-webkit-scrollbar-thumb {
+    background-color: #28a745;
+    border-radius: 4px;
+}
+
+.myform {
+    margin-top: 50px;
+}
+
+.inp-box {
+    width: 100%;
+    display: flex;
+    min-height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    resize: none
+}
+
+.inp {
+    flex: 1;
+    height: 40px;
+    text-indent: 10px;
+    border: 1px solid #ddd;
+    font-size: 20px;
+    margin: 0 20px;
+}
+
+.myform {
+    width: 540px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 5px;
+}
+
+.msg {
+    width: 100%;
+    max-width: 100%;
+    flex: 1;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    text-indent: 10px;
+    line-height: 24px;
+    padding: 20px 0;
+    font-size: 20px;
+    min-height: 100px;
+    resize: none;
+    border-radius: 4px;
+    outline: none;
+}
+
+.button-group {
+    display: flex;
+    gap: 250px; /* 可调整按钮之间的间距 */
+    align-items: center;
+    margin-top: 10px;
+}
+
+.but, .but1 {
+    display: inline-block;
+    width: 150px;
+    height: 34px;
+    line-height: 34px; /* 确保文本垂直居中 */
+    background: lightblue;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.but:hover, .but1:hover {
+    opacity: 0.8;
+}
+
+.but1 {
+    display: inline-block;
+}
+
+
+
+
+
+/* footer */
+.footer-images {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;  /* 图片居中 */
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+/* 图片样式 */
+.footer-images img {
+    width: 50px;  /* 控制图片宽度 */
+    height: 50px; /* 控制图片高度 */
+    margin: 0 200px;  /* 图片间距 */
+    cursor: pointer;  /* 鼠标悬停时显示为手型 */
+}
+
+/* 图片链接的样式 */
+.footer-images a {
+    text-decoration: none;
+}
