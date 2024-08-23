@@ -1,0 +1,290 @@
+/* チーム用開発 */
+ /* ホームページ用 */ 
+
+ body{
+    
+    background-color: #f4f0f0 /*sassとcssは最後の所だけセミコロンがいらない*/
+    
+  }
+  
+
+  .amhome-header{
+    font-size: 24px;
+    
+    color: #333 /* sassとcssは最後の所だけセミコロンがいらない */
+  }
+  
+  .amhome-button{
+    background-color: #9b8cb8;
+    
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer  /* sassとcssは最後の所だけセミコロンがいらない */
+
+  }
+
+  /* ホームページの内容のデザインを編集するためのコード */
+  .contenthome{
+       
+       /*background-image: url(../img/homeside.jpeg);*/
+       /*background-color: navajowhite;*/
+       background-color: #fff;
+       background-position: center center;
+       background-attachment: fixed;
+       background-size: cover;
+  }
+
+  
+  
+  
+  /* 時間と日にちを表示するためのコード */
+  .stime{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+      height: 34px;
+      color: #8663cc
+  }
+  
+  
+  /* サイト名を表示するためのコード */
+  .site-name{
+      height: 204px;
+      width: 100%;
+      /*background-color: #6339b9;*/
+      background-image: url(../img/skyscraper.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      
+      
+      background-position: center center; /* 画像を常に上下左右の中央に配置させるために使うコード */
+      background-color: rgba(255, 255, 255, 0.562); /*背景を明るく薄めるためのコード*/
+      
+      /*size: cover;*/
+      color: #7f4f96;
+      display: flex;
+      justify-content: center;
+      font-size: 63px;
+      align-items: center
+  }
+  
+  /* キャッチコピーを表示するためのコード */
+  .catchcpy{
+      height: 99px;
+      /*background-color: #333;*/
+      color: #f0f0f0;
+      white-space: nowrap; /* テキストが折り返さないようにする */
+      /*animation: move 5s infinite;*/ /* 5秒でアニメーションを繰り返す */
+      background-image: url(../img/overseascprn.png); /* 背景画像を設定 */
+      background-size: cover; /* 背景画像が div を覆うようにする */
+      background-position: center center; 
+      /*background-repeat: no-repeat;*/ /* 背景画像を繰り返さないようにする */
+      background-color: rgba(255, 255, 255, 0.562);
+      /*animation: moveBackground 10s linear infinite;*/ /* 10秒でアニメーションを繰り返す */
+      display: flex;
+      justify-content: center;
+      animation: bg-slider 23s linear infinite; /* 23sの部分背景画像の約数だとスムーズ */
+      align-items: center
+  
+      
+
+  }
+/* 横に無限にスクロールするためのコード */
+  @keyframes bg-slider {
+	from { background-position: 0 0; }
+    to { background-position: -1518px 0; } /* 1518pxとは使用した背景画像の長さ */
+}
+  /* キャッチコピーを動かすためのコード(実装しない予定)*/
+  @keyframes infinity-scroll-left {
+    from {
+      transform: translateX(0);
+    }
+      to {
+      transform: translateX(-100%);
+    }
+}
+  @keyframes move {
+    0% {
+        background-position: translateX(0); /* 初期位置 */
+    }
+    50% {
+        background-position: translateX(100px); /* 100px 右に移動 */
+    }
+    100% {
+        background-position: translateX(0); /* 初期位置に戻る */
+    }
+    
+}
+  
+  /* 写真をまとめるためのコード */
+  .Ahpictures{
+      
+      flex-direction: column;
+      
+  }
+  
+  /* 写真1 */
+  .picture1{
+      /*background-color: #7c7a7a;*/
+      background-image: url(../img/copr0.webp);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center; /* 画像を常に上下左右の中央に配置させるために使うコード */
+      height: 350px;
+      display: flex;
+      margin-top: 30px; /* 境界線の上側を広げる */
+      margin-left: 230px; /* 境界線の左側を広げる */
+      margin-right: 230px; /* 境界線の右側を広げる */
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  /* 写真2 */
+  .picture2{
+      /*background-color: #7c7a7a;*/
+      height: 350px;
+      background-image: url(../img/copr1.jpeg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      display: flex;
+      margin-top: 30px; 
+      margin-left: 230px; 
+      margin-right: 230px; 
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+  }
+
+  /* 写真3 */
+  .picture3{
+    /*background-color: #7c7a7a;*/
+    height: 350px;
+    background-image: url(../img/copr2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    margin-top: 30px; 
+    margin-left: 230px; 
+    margin-right: 230px; 
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+  
+  /* ログインと新規登録を表示するためのコード */
+  .regis{
+     text-align: right;
+     padding: 10px;
+  }
+  
+  /* 検索するボタンを表示するための記述 */
+  .search-form-5 {
+    margin-top: 35px; 
+    margin-left: 193px;
+    margin-right: 193px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    overflow: hidden;
+    border-radius: 25px;
+    background-color: #f2f2f2;
+    margin-bottom: 30px;
+    
+}
+
+.search-form-5 input {
+    height: 45px;
+    padding: 5px 15px;
+    border: none;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    font-size: 1em;
+    outline: none;
+}
+
+.search-form-5 input::placeholder {
+    color: #777777;
+}
+
+.search-form-5 button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 45px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.search-form-5 button::after {
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%20%3Cpath%20d%3D%22M23.7%2020.8%2019%2016.1c-.2-.2-.5-.3-.8-.3h-.8c1.3-1.7%202-3.7%202-6C19.5%204.4%2015.1%200%209.7%200S0%204.4%200%209.7s4.4%209.7%209.7%209.7c2.3%200%204.3-.8%206-2v.8c0%20.3.1.6.3.8l4.7%204.7c.4.4%201.2.4%201.6%200l1.3-1.3c.5-.5.5-1.2.1-1.6zm-14-5.1c-3.3%200-6-2.7-6-6s2.7-6%206-6%206%202.7%206%206-2.6%206-6%206z%22%20fill%3D%22%23777777%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    content: '';
+}
+  
+  
+/* 企業検索やプロフィール検索などを表示するためのコード */
+.searchdisplay{
+    display: flex;
+    flex-direction: column;
+    height: 103px;
+    
+}
+
+/* ログインボタンと新規登録ボタンを表示するためのコード */
+.button1 {
+    display: inline-block;
+    background: linear-gradient(to right, #00bfff 0%, #7fffd4 45%, #fffacd 100%);
+    background-size: 200% auto;  
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: .5s;
+  }
+  .button10:hover {
+    color: #fff;
+    background-position: right center;
+  }
+
+/* 翻訳機能を実装するためのコード */
+  .transformf{
+     display: inline-block;
+     background-image: url(../img/transform.jpeg);
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+
+
+  }
+
+/* ボタンのサイズを括るためのコード */
+.searchdisplay{
+    flex-direction: row;
+    justify-content: space-around;
+}
+/* プラスボタン */
+.icon1{
+    size: 53%;
+    text-align: left;
+    padding-right: 24%;
+    margin-top: 10px;
+}
+/* 虫眼鏡ボタン */
+.icon2{
+    size: 53%;
+    text-align: right;
+    padding-left: 24%;
+    margin-top: 10px;
+}

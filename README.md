@@ -16,11 +16,11 @@ docker run --rm \
     composer install
 
 # 以下は一つずつ実行してください
-docker-compose up -d
-docker-compose exec laravel.test php artisan key:generate
-docker-compose exec laravel.test php artisan migrate:fresh
-docker-compose exec laravel.test npm install
-docker-compose exec laravel.test npm run dev
+docker compose up -d
+docker compose exec laravel.test php artisan key:generate
+docker compose exec laravel.test php artisan migrate:fresh
+docker compose exec laravel.test npm install
+docker compose exec laravel.test npm run dev
 ```
 
 ここまで実行すると http://localhost/ でサンプルアプリにアクセスできます
@@ -28,8 +28,8 @@ docker-compose exec laravel.test npm run dev
 ## 2回目以降の起動方法
 
 ```sh
-docker-compose up -d
-docker-compose exec laravel.test npm run dev
+docker compose up -d
+docker compose exec laravel.test npm run dev
 ```
 
 ## 停止する方法
@@ -47,17 +47,17 @@ phpMyAdmin: http://localhost:8080/
 
 ```sh
 # MySQLコンソールにログイン
-docker-compose exec mysql mysql -u sail -p'password' example_app
+docker compose exec mysql mysql -u sail -p'password' example_app
 
 # キャッシュ削除
-docker-compose exec laravel.test php artisan cache:clear
-docker-compose exec laravel.test php artisan config:clear
-docker-compose exec laravel.test php artisan route:clear
-docker-compose exec laravel.test php artisan view:clear
-docker-compose exec laravel.test php artisan clear-compiled
+docker compose exec laravel.test php artisan cache:clear
+docker compose exec laravel.test php artisan config:clear
+docker compose exec laravel.test php artisan route:clear
+docker compose exec laravel.test php artisan view:clear
+docker compose exec laravel.test php artisan clear-compiled
 
 # Laravel実行コンテナにログイン
-docker-compose exec laravel.test /bin/bash
+docker compose exec laravel.test /bin/bash
 ```
-
-# test
+# dockerのversionが古い時のコマンド
+docker-compose up -ds
