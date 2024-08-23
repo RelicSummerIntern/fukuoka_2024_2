@@ -148,13 +148,13 @@
 
     <div class="footer-images">
 
-        <a href="{{route('ad')}}" target="_blank">
+        <a href="{{route('ad')}}">
             <img src="../imgs/Home.png" alt="Link 3">
         </a>
-        <a href="{{route('thread')}}" target="_blank">
+        <a href="{{route('thread')}}">
             <img src="../imgs/Plus.png" alt="Link 2">
         </a>
-        <a href="{{route('AMprofile')}}" target="_blank">
+        <a href="{{route('AMprofile_edit')}}">
             <img src="../imgs/account.png" alt="Link 1">
         </a>
 
