@@ -12,35 +12,60 @@ class AmhomeController extends Controller{
         return view('AMhome',['today'=>$today]);
     }
 
-    public function toggleAuth() {
-        if (Auth::check()) {
-            Auth::logout();
-        } else {
-            // Logic to log in
+    
+    
+    /* ログアウトを押したらログイン画面に戻るためのコード */
+    public function logout(Request $request)
+    {
+        Auth::logout();  // ユーザーをログアウト
+        $request->session()->invalidate();  // セッションを無効化
+        $request->session()->regenerateToken();  // CSRFトークンを再生成
+
+        // ログアウト後、ログイン画面にリダイレクト
+        return redirect()->route('login');
+    }
+    /*
+    public function alogout(Request $request)
+    {
+        Auth::alogout();  // ユーザーをログアウト
+        $request->session()->invalidate();  // セッションを無効化
+        $request->session()->regenerateToken();  // CSRFトークンを再生成
+
+        // ログアウト後、ログイン画面にリダイレクト
+        return redirect()->route('ad');
+    }
+    */
+    /* ログインしたらホーム画面に遷移するためのコード */
+    public function login(Request $request): View
+    {
+        // 認証情報をリクエストから取得
+            $credentials = $request->only('email', 'password');
+
+        // 認証に成功した場合
+        if (Auth::attempt($credentials)) {
+        // 認証が成功したらホーム画面にリダイレクト
+              $request->session()->regenerate(); // セッションIDを再生成（セキュリティ向上のため）
+
+             return view('AMhome');  // ホーム画面に遷移
         }
-
-        return redirect('/');
+        //認証に失敗した場合もう一度ログイン画面に戻すためのコード
+             return view('auth.login');
     }
     
-  
-    /* ホームページからログイン画面に遷移するためのコード */
-    public function rogin(Request $request): View{
-        return view('AMhome_rogin');
-    } 
-    /* ログイン画面からホームページに遷移するためのコード */
-    public function arogin(Request $request): View{
-        return view('AMhome');
-    }
-
-    /* ホームページから新規登録画面に遷移するためのコード */
-    public function regis(Request $request): View{
-        return view('AMhome_regis');
-    }
-    /* 新規登録画面からホームページに遷移するためのコード */
-    public function aregis(Request $request): View{
-        return view('AMhome');
-    }
     
+    
+    /* 検索機能を実装するためのコード */
+    public function searchcpn(Request $request){
+        $keyword = $request->input('keyword');
+        $query = Post::query();
+        if(!empty($keyword)){
+            $query->where('title','LIKE',"%{$keyword}%")->orWhere('author','LIKE',"%{keyword}%");
+        }
+        $posts=$query->get();
+        return view('AMhome',compact('posts','keyword'));
+
+
+    }
 
     /* 雄貴が作ったものを遷移するためのコード */
     public function ad(Request $request): View{

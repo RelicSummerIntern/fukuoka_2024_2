@@ -26,6 +26,7 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
+/* サンプル機能の一覧 */
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -52,6 +53,19 @@ require __DIR__.'/auth.php';
  Route::get('/AMhome',[AmhomeController::class, 'arogin'])->name('AMhome.arogin');/* ログイン画面からホームページに遷移するためのコード */
  Route::get('/AMhome',[AmhomeController::class, 'regis'])->name('AMhome.regis');/* ホームページから新規登録画面に遷移するためのコード */
  Route::get('/AMhome',[AmhomeController::class, 'aregis'])->name('AMhome.aregis');/* 新規登録画面からホーム画面に遷移するためのコード */
+ Route::get('/AMhome',[AmhomeController::class,'AMhome'])->name('AMhome.searchcpn');/* ホーム画面で検索した時にヒットするためのコード(部分一致検索も実装可能) */
+
+ // Route for home page
+//Route::get('/AMhome', [AmhomeController::class, 'index'])->name('AMhome.ad');
+
+// Route for login page
+// Route::get('/login', [AmhomeController::class, 'rogin'])->name('login');
+
+// Route to handle the login/logout toggle
+//Route::post('/toggle-auth', [AmhomeController::class, 'toggleAuth'])->name('toggleAuth');
+
+// ログイン後に移動するページ（/ad）
+//Route::get('/ad', [AmhomeController::class, 'ad'])->name('AMhome.ad');
 
 /* 雄貴が作ったコード */
 Route::get('/AMprofile', function () {
@@ -63,6 +77,12 @@ Route::get('/AMprofile_edit', function () {
 Route::get('/AMCPprofile', function () {
     return view('AMCPprofile');
 });
+
+
+
+Route::post('/logout', [AmhomeController::class, 'logout'])->name('logout');/* ホーム画面(ad)からログイン画面に遷移するためのコード */
+Route::post('/login', [AmhomeController::class, 'login'])->name('login');/* ログインした後にホーム画面(ad)に遷移するためのコード */
+
 
 Route::get('/AMprofile__edit', [AMProfileController::class, 'edit'])->name('AMprofile.edit');
 Route::get('/AMprofile', [AMProfileController::class, 'back'])->name('AMprofile.back');

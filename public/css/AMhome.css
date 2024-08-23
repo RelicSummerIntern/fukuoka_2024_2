@@ -63,17 +63,18 @@
       background-position: center center; /* 画像を常に上下左右の中央に配置させるために使うコード */
       background-color: rgba(255, 255, 255, 0.562); /*背景を明るく薄めるためのコード*/
       
-      size: cover;
+      /*size: cover;*/
       color: #7f4f96;
       display: flex;
       justify-content: center;
+      font-size: 63px;
       align-items: center
   }
   
   /* キャッチコピーを表示するためのコード */
   .catchcpy{
       height: 99px;
-      background-color: #333;
+      /*background-color: #333;*/
       color: #f0f0f0;
       white-space: nowrap; /* テキストが折り返さないようにする */
       /*animation: move 5s infinite;*/ /* 5秒でアニメーションを繰り返す */

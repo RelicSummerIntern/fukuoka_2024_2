@@ -1,11 +1,11 @@
 <!-- チーム開発用 homeページ -->
-<!-- リンク先：localhost/AMhome -->
+<!-- リンク先：localhost/AMhome localhost/ad -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'サイト名')</title>
+    <title>@yield('title', 'エイリアン・マッチング')</title>
     <!--<link rel="stylesheet" href="{{ asset('css/style.css') }}">-->
     <link rel="stylesheet" href="{{ asset('css/AMhome.css') }}">
     <!-- FontAwesome上で追加した画像をこのHTMLに反映するためのコード -->
@@ -16,7 +16,7 @@
 
     <header>
         
-        <div class="site-name">サイト名</div>
+        <div class="site-name">エイリアン・マッチング</div>
         
        
     </header>
@@ -28,17 +28,22 @@
           <div class="regis">
             <!--<button class="btn">background image</button>-->
             <a href="{{route('register')}}" class="button1">新規登録</a>
-            <a href="{{route('post.index')}}" class="button1">
+            <a href="{{ route('login') }}">
                 @if(Auth::check())
+        <!-- Display the logout button if the user is logged in -->
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+            <a href="{{'login'}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="button1">
                     ログアウト
+            </a>
                 @else
-                    ログイン
+        <!-- Display the login button if the user is logged out -->
+            <a href="{{ route('login') }}" class="button1">ログイン</a>
                 @endif
             </a>
             <a href="#" class="transformf"></a>
           </div>
-    
-      
         <div>
             <form action="#" class="search-form-5">
              <label>
@@ -54,14 +59,18 @@
         </div> 
 
         <div class="searchdisplay">
+         <a href="">
           <p class="icon1">
              <i class="fa-solid fa-plus fa-4x icon1"></i><!-- プラスボタン -->
           </p>
+         </a>
+         <a href="">
           <p class="icon2">
              <i class="fa-solid fa-magnifying-glass fa-4x icon2"></i><!-- 虫眼鏡ボタン -->
           </p>
+         </a>
         </div>
-        <div class=catchcpy>キャッチコピー</div>
+        <div class=catchcpy><h2>扉を開けて、豊かな世界へ。</h2></div>
     </section>
 
     @yield('content')
