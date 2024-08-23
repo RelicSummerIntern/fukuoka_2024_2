@@ -13,9 +13,9 @@
         <div class="nav-box">
             <span>掲示板添付</span>
             <ul class="nav">
-                <li><a href="">ホームページ</a></li>
-                <li><a href="">新規登録</a></li>
-                <li><a href="">ログイン／ログアウト</a></li>
+                <li><a href="{{route('ad')}}">ホームページ</a></li>
+                <li><a href="{{route('register')}}">新規登録</a></li>
+                <li><a href="{{route('login')}}">ログイン／ログアウト</a></li>
             </ul>
         </div>
     </header>
