@@ -13,7 +13,7 @@
             <span>スレッド</span>
             <ul class="nav">
                 <li><a href="{{route('ad')}}">ホームページ</a></li>
-                <li><a href="{{route('resgier')}}">新規登録</a></li>
+                <li><a href="{{route('register')}}">新規登録</a></li>
                 <li><a href="{{route('login')}}">ログイン／ログアウト</a></li>
             </ul>
         </div>
@@ -47,7 +47,7 @@
 
 
     <div class="footer-images">
-        <a href="{{route('ad')}}" target="_blank">
+        <a href="{{route('ad')}}">
             <img src="../imgs/Home.png" alt="Link 3">
         </a>
     </div>

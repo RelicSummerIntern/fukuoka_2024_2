@@ -24,8 +24,9 @@
 
         <div class="bulletinBoard-main">
             <div class="l">
-                <!-- 头像 -->
-                <img id="profile-avatar" src="../imgs/p1.JPG" width="220">
+                <a href="{{route('AMprofile')}}">
+                    <img id="profile-avatar" src="../imgs/p1.JPG" width="220">
+                </a>
             </div>
             <div class="r">
                 <p id="author-name">名 前：</p>
@@ -60,7 +61,7 @@
     </div>
 
     <div class="footer-images">
-        <a href="{{route('ad')}}" target="_blank">
+        <a href="{{route('ad')}}">
             <img src="../imgs/Home.png" alt="Link 3">
         </a>
     </div>
